@@ -5,16 +5,46 @@
 
 }
 *{
-    margin: 0;
-    padding: 0
+    margin: 0px;
+    padding: 0px
+}
+a{
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    background-color: coral;
+    align-items: center;
+    padding: 10px
+
+}
+   .logo{
+    display: flex;
+    align-items: center
+
+}
+
+    .logo img {
+        height: 50px;
+        margin-right:  10px
+    }
+nav a {
+    font-weight: 600;
+    padding-right: 10px;
+
+}
+nav a:hover¨{
+    color: white
 }
 
 .img{
+
     height: 25vh
 
 }
-*{
-   background-color:green;
+body {
+   background-color:rgb(37, 185, 37);
 }
 .dentro{
     height: 60vh
@@ -22,20 +52,84 @@
 }
 h1{
     color: yellow;
+    margin: 20px;
+    padding: 20px;
 }
 
 h2{
 color: white;
+margin: 20px;
+padding: 20px;
 }
 p{
     color: white;
+    margin: 20px;
+    padding: 20px;
 }
  ol li a{
     color: white;
     text-decoration: none;
+    margin: 20px;
+    padding: 20px;
 
  }
- a{
-    color: yellow;
-    text-decoration: none;
- }
+
+
+ button {
+    background-color: yellow;
+    font-size: 20px;
+    margin: 10px;
+    }
+    a {
+        color: white;
+        text-decoration: none;
+        
+    }
+
+   .contenedor {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows:repeat(1,250px) ;
+    gap: 0px;
+    row-gap: 0px;
+    margin: auto;
+    max-width: 70%;
+
+
+
+
+   }
+   div img {
+    height: 250px;
+   }
+p {
+    margin: 20px;
+}
+ol {
+    margin: 70px;
+}
+
+/* Imágenes responsivas según el tamaño de pantalla */
+@media (max-width: 575.98px) {
+  .img-fluid {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .img-fluid {
+    width: 90%;
+    height: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .img-fluid {
+    width: 70%;
+    height: auto;
+  }
+}
+
+    
+
