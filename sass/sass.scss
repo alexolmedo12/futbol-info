@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: rgb(37, 185, 37);
+  background-image: url(../assets/imagenes/Fondodepromiedos.webp);
+}
+
+a {
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    color: white;
+  }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  background-color: coral;
+  align-items: center;
+  padding: 10px;
+
+  .logo {
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 50px;
+      margin-right: 10px;
+    }
+  }
+}
+
+nav {
+  ul {
+    text-align: center;
+
+    li {
+      display: inline-block;
+      margin: 0 10px;
+      list-style: none;
+
+      a:hover {
+        color: white;
+      }
+    }
+  }
+}
+
+.img {
+  height: 25vh;
+}
+
+.dentro {
+  height: 60vh;
+}
+
+h1 {
+  color: yellow;
+  margin: 20px;
+  padding: 20px;
+}
+
+h2,
+p {
+  color: white;
+  margin: 20px;
+  padding: 20px;
+}
+
+p {
+  margin: 20px;
+}
+
+ol {
+  margin: 70px;
+
+  li {
+    color: white;
+
+    a {
+      color: white;
+      text-decoration: none;
+      margin: 20px;
+      padding: 20px;
+    }
+  }
+}
+
+button {
+  background-color: yellow;
+  font-size: 20px;
+  margin: 10px;
+}
+
+.contenedor {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 520px);
+  gap: 0px;
+  row-gap: 0px;
+  margin: auto;
+  max-width: 70%;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+  }
+}
+
+div img {
+  height: 250px;
+}
+
+.Championshtml {
+  margin-left: 20px;
+  height: 75vh;
+}
+
+.carousel-item {
+  img {
+    max-height: 400px;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+// Media Queries
+@media (max-width: 575.98px) {
+  .img-fluid {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .img-fluid {
+    width: 90%;
+    height: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .img-fluid {
+    width: 70%;
+    height: auto;
+  }
+}
+.sobre-nosotros {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: wrap;
+
+  img {
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .texto {
+    max-width: 600px;
+    color: white;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+
+    img {
+      max-width: 90%;
+    }
+  }
+}

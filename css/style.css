@@ -29,13 +29,17 @@ header{
         height: 50px;
         margin-right:  10px
     }
-nav a {
-    font-weight: 600;
-    padding-right: 10px;
 
-}
-nav a:hover¨{
+nav ul li a:hover {
     color: white
+}
+nav ul {
+  text-align: center;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 10px;
 }
 
 .img{
@@ -45,6 +49,7 @@ nav a:hover¨{
 }
 body {
    background-color:rgb(37, 185, 37);
+   background-image: url(../assets/imagenes/Fondodepromiedos.webp);
 }
 .dentro{
     height: 60vh
@@ -89,7 +94,7 @@ p{
    .contenedor {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows:repeat(1,250px) ;
+    grid-template-rows:repeat(2,520px);
     gap: 0px;
     row-gap: 0px;
     margin: auto;
@@ -131,5 +136,59 @@ ol {
   }
 }
 
-    
+    nav ul li {
+        list-style: none;;
+    }
+ .Championshtml {
+    margin-left: 20px;  
+    height: 75vh;
+ }
 
+ .contenedor img{
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+ }
+ ol li {
+  color: white;
+ }
+  .carousel-item img {
+      max-height: 400px;
+      object-fit: cover;
+      width: 100%;  
+    }
+        h1, h2, p, li, a {
+      color: white;
+    }
+    .sobre-nosotros {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.sobre-nosotros img {
+  max-width: 1000px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.sobre-nosotros .texto {
+  max-width: 600px;
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+@media (max-width: 768px) {
+  .sobre-nosotros {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-nosotros img {
+    max-width: 90%;
+  }
+}
