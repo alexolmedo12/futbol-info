@@ -1,93 +1,125 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+  --altura_header: 80px;
+  --padding_left_right: 2rem;
+  --ancho_maximo: 1200px;
+}
+
+$color-coral: coral;
+$color-yellow: yellow;
+$color-white: white;
+$color-green: rgb(37, 185, 37);
+$font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+
 * {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: $font-family;
   margin: 0px;
   padding: 0px;
 }
 
+
 body {
-  background-color: rgb(37, 185, 37);
+  background-color: $color-green;
   background-image: url(../assets/imagenes/Fondodepromiedos.webp);
+  overflow-x: hidden;
 }
 
-a {
-  color: white;
-  text-decoration: none;
-
-  &:hover {
-    color: white;
-  }
-}
 
 header {
   display: flex;
   justify-content: space-between;
   height: 70px;
-  background-color: coral;
+  background-color: $color-coral;
   align-items: center;
   padding: 10px;
+}
 
-  .logo {
-    display: flex;
-    align-items: center;
+.logo {
+  display: flex;
+  align-items: center;
 
-    img {
-      height: 50px;
-      margin-right: 10px;
-    }
+  img {
+    height: 50px;
+    margin-right: 10px;
   }
 }
+
 
 nav {
-  ul {
-    text-align: center;
+  position: relative;
 
-    li {
-      display: inline-block;
-      margin: 0 10px;
-      list-style: none;
+  ul li {
+    list-style: none;
+  }
 
-      a:hover {
-        color: white;
-      }
+  a {
+    color: $color-white !important;
+
+    &:hover {
+      color: $color-yellow !important;
     }
   }
 }
 
-.img {
-  height: 25vh;
+.menu-hamburguesa {
+  display: none;
 }
 
-.dentro {
-  height: 60vh;
+.list_icon {
+  display: none;
+  cursor: pointer;
+  color: $color-white;
 }
+
+.ul_links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.li_links {
+  a {
+    color: $color-white;
+    text-decoration: none;
+  }
+}
+
 
 h1 {
-  color: yellow;
+  color: $color-yellow;
   margin: 20px;
   padding: 20px;
 }
 
-h2,
-p {
-  color: white;
+h2 {
+  color: $color-white;
   margin: 20px;
   padding: 20px;
 }
 
 p {
+  color: $color-white;
   margin: 20px;
+  padding: 20px;
 }
+
+h1, h2, p, li, a {
+  color: $color-white;
+}
+
 
 ol {
   margin: 70px;
 
   li {
-    color: white;
+    color: $color-white;
 
     a {
-      color: white;
+      color: $color-white;
       text-decoration: none;
       margin: 20px;
       padding: 20px;
@@ -95,10 +127,31 @@ ol {
   }
 }
 
+
 button {
-  background-color: yellow;
+  background-color: $color-yellow;
   font-size: 20px;
   margin: 10px;
+}
+
+
+a {
+  color: $color-white;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.img {
+  height: 25vh;
+}
+
+div img {
+  height: 250px;
 }
 
 .contenedor {
@@ -117,13 +170,32 @@ button {
   }
 }
 
-div img {
-  height: 250px;
+@media (min-width: 769px) {
+  .contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 250px;
+    gap: 10px;
+    max-width: 90%;
+    margin: auto;
+  }
+}
+
+
+.dentro {
+  max-width: 1000px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-left: 50px;
 }
 
 .Championshtml {
   margin-left: 20px;
-  height: 75vh;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  object-fit: contain;
 }
 
 .carousel-item {
@@ -134,7 +206,41 @@ div img {
   }
 }
 
-// Media Queries
+.sobre-nosotros {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: wrap;
+
+  img {
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .texto {
+    max-width: 600px;
+    color: $color-white;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+}
+
+.video-mundial {
+  max-width: 1000px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-left: 50px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  display: block;
+  aspect-ratio: 16/9;
+}
+
 @media (max-width: 575.98px) {
   .img-fluid {
     width: 100%;
@@ -155,34 +261,101 @@ div img {
     height: auto;
   }
 }
-.sobre-nosotros {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 40px;
-  padding: 40px;
-  flex-wrap: wrap;
 
-  img {
-    max-width: 1000px;
-    width: 100%;
-    height: auto;
+@media (max-width: 768px) {
+  .ul_links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: $color-coral;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+    max-width: 400px;
+    min-width: 280px;
+    padding: 20px 0;
+    z-index: 1000;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
-  .texto {
-    max-width: 600px;
-    color: white;
-    font-size: 1.1rem;
-    line-height: 1.6;
+  .menu-hamburguesa:checked ~ .ul_links {
+    display: flex;
   }
 
-  @media (max-width: 768px) {
+  .list_icon {
+    display: block;
+  }
+
+  .li_links {
+    width: 100%;
+    text-align: left;
+    margin: 5px 0;
+    padding-left: 20px;
+
+    a {
+      width: 100%;
+      padding: 15px 20px;
+      font-size: 1.1rem;
+      text-align: left;
+    }
+  }
+
+  .sobre-nosotros {
     flex-direction: column;
     text-align: center;
 
     img {
       max-width: 90%;
     }
+  }
+
+  .video-mundial {
+    margin-left: 15px;
+    margin-right: 15px;
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 769px) {
+  .ul_links {
+    display: flex !important;
+    flex-direction: row;
+    background-color: transparent;
+    position: static;
+    height: auto !important;
+    transform: none;
+    width: auto;
+    gap: 20px;
+  }
+
+  .list_icon {
+    display: none;
+  }
+
+  .li_links {
+    margin: 0 10px;
+  }
+}
+@media (max-width: 750px) and (min-width: 425px) {
+  .Championshtml {
+    margin-left: 15px;
+    margin-right: 15px;
+    max-width: 90%;
+    height: auto;
+  }
+
+  .dentro {
+    margin-left: 15px;
+    margin-right: 15px;
+    max-width: 90%;
+  }
+
+  .video-mundial {
+    margin-left: 15px;
+    margin-right: 15px;
+    max-width: 90%;
   }
 }

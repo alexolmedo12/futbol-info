@@ -8,7 +8,12 @@
     margin: 0px;
     padding: 0px
 }
-a{
+:root{
+  --altura_header:80px;
+  --padding_left_right:2rem;
+  --ancho_maximo: 1200px;
+
+
 }
 header{
     display: flex;
@@ -30,18 +35,6 @@ header{
         margin-right:  10px
     }
 
-nav ul li a:hover {
-    color: white
-}
-nav ul {
-  text-align: center;
-}
-
-nav ul li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
 .img{
 
     height: 25vh
@@ -50,6 +43,7 @@ nav ul li {
 body {
    background-color:rgb(37, 185, 37);
    background-image: url(../assets/imagenes/Fondodepromiedos.webp);
+   overflow-x: hidden;
 }
 .dentro{
     height: 60vh
@@ -192,3 +186,191 @@ ol {
     max-width: 90%;
   }
 }
+
+.dentro {
+  max-width: 1000px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-left: 50px;
+  
+}
+ 
+/* MENÚ HAMBURGUESA - CONFIGURACIÓN PRINCIPAL */
+nav {
+  position: relative;
+}
+
+.menu-hamburguesa {
+  display: none;
+}
+
+.list_icon {
+  display: none;
+  cursor: pointer;
+  color: white;
+}
+
+.ul_links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.li_links a {
+  color: white;
+  text-decoration: none;
+}
+
+/* RESPONSIVE MÓVILES */
+@media (max-width: 768px) {
+    .ul_links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: coral;
+        position: absolute;
+        top: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90vw;
+        max-width: 400px;
+        min-width: 280px;
+        padding: 20px 0;
+        z-index: 1000;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .menu-hamburguesa:checked ~ .ul_links {
+        display: flex;
+    }
+
+    .list_icon {
+        display: block;
+    }
+
+    .li_links {
+        width: 100%;
+        text-align: left;
+        margin: 5px 0;
+        padding-left: 20px;
+    }
+
+    .li_links a {
+        width: 100%;
+        padding: 15px 20px;
+        font-size: 1.1rem;
+        text-align: left;
+    }
+}
+
+/* RESPONSIVE ESCRITORIO */
+@media (min-width: 769px) {
+  .ul_links {
+    display: flex !important;
+    flex-direction: row;
+    background-color: transparent;
+    position: static;
+    height: auto !important;
+    transform: none;
+    width: auto;
+    gap: 20px;
+  }
+
+  .list_icon {
+    display: none;
+  }
+
+  .li_links {
+    margin: 0 10px;
+  }
+}
+
+/* ESTILOS ADICIONALES */
+nav a {
+  color: white !important;
+}
+
+nav a:hover {
+  color: yellow !important;
+}
+
+.contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: 250px;
+  gap: 10px;
+  max-width: 90%;
+  margin: auto;
+}
+/* champions responsive*/
+/* IMÁGENES RESPONSIVAS - REGLAS GENERALES */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* IMAGEN CHAMPIONS LEAGUE RESPONSIVA */
+.Championshtml {
+    margin-left: 20px;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* RESPONSIVE BREAKPOINTS PARA IMÁGENES (750px - 425px) */
+@media (max-width: 750px) and (min-width: 425px) {
+    .Championshtml {
+        margin-left: 15px;
+        margin-right: 15px;
+        max-width: 90%;
+        height: auto;
+    }
+    
+    /*.contenedor img {
+        height: 220px;
+        width: 100%;
+        object-fit: cover;
+    }*/
+    
+    .dentro {
+        margin-left: 15px;
+        margin-right: 15px;
+        max-width: 90%;
+    }
+} 
+
+.video-mundial {
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    display: block;
+    aspect-ratio: 16/9;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .video-mundial {
+        margin-left: 15px;
+        margin-right: 15px;
+        max-width: 90%;
+    }
+}
+
+/* Responsive para tablets (750px - 425px) */
+@media (max-width: 750px) and (min-width: 425px) {
+    .video-mundial {
+        margin-left: 15px;
+        margin-right: 15px;
+        max-width: 90%;
+    }
+} 
