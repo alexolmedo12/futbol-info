@@ -108,7 +108,7 @@ ol {
     margin: 70px;
 }
 
-/* Imágenes responsivas según el tamaño de pantalla */
+/* Imágenes responsivas  */
 @media (max-width: 575.98px) {
   .img-fluid {
     width: 100%;
@@ -224,7 +224,7 @@ nav {
   text-decoration: none;
 }
 
-/* RESPONSIVE MÓVILES */
+/* RESPONSIVE MÓVILE */
 @media (max-width: 768px) {
     .ul_links {
         display: none;
@@ -357,7 +357,7 @@ img {
     aspect-ratio: 16/9;
 }
 
-/* Responsive para móviles */
+/* Responsive para móvil */
 @media (max-width: 768px) {
     .video-mundial {
         margin-left: 15px;
@@ -366,11 +366,30 @@ img {
     }
 }
 
-/* Responsive para tablets (750px - 425px) */
-@media (max-width: 750px) and (min-width: 425px) {
+
+@media (max-width: 750px) and (min-width: 425px) {}
     .video-mundial {
         margin-left: 15px;
         margin-right: 15px;
         max-width: 90%;
     }
-} 
+/* Animaciones de entrada para imágenes de index*/
+.contenedor div {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideInUp 0.8s ease-out forwards;
+}
+
+/* amnimacion */
+@keyframes slideInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* delay para transicion */
+.contenedor div:nth-child(1) { animation-delay: 0.2s; }
+.contenedor div:nth-child(2) { animation-delay: 0.4s; }
+.contenedor div:nth-child(3) { animation-delay: 0.6s; }
+.contenedor div:nth-child(4) { animation-delay: 0.8s; }
